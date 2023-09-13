@@ -1,3 +1,30 @@
+# Action Scheduler - Job Queue for WordPress
+[Action Scheduler](https://actionscheduler.org/) es una **Biblioteca de programación de tareas en segundo plano para WordPress**. Permite a los desarrolladores programar y ejecutar tareas en segundo plano de manera eficiente y confiable.
+
+Action Scheduler es una cola de trabajos escalable y rastreable para procesar en segundo plano grandes conjuntos de acciones en WordPress. Está especialmente diseñado para distribuirse en complementos de WordPress.
+
+---
+### Action-scheduler y el Segundo Plano
+En WordPress, las tareas en segundo plano se utilizan para ejecutar funcionalidades que requieren tiempo adicional o recursos del servidor, como enviar correos electrónicos, procesar imágenes, realizar actualizaciones de bases de datos, entre otros. Estas tareas se ejecutan en segundo plano sin afectar la experiencia del usuario en el sitio web.
+
+Action Scheduler se relaciona con la ejecución de funcionalidades en segundo plano en WordPress porque proporciona una forma estructurada y confiable de programar y ejecutar estas tareas. Permite a los desarrolladores definir acciones que deben ejecutarse en un momento específico o en intervalos regulares. Además, Action Scheduler maneja la administración de tareas, la planificación y la ejecución en segundo plano, lo que garantiza que las tareas se realicen de manera eficiente y sin interrupciones en el rendimiento del sitio web.
+
++ Action Scheduler funciona activando un gancho de acción para que se ejecute en algún momento en el futuro. Cada enlace se puede programar con datos únicos, para permitir que las devoluciones de llamada realicen operaciones con esos datos. El gancho también se puede programar para que se ejecute en una o más ocasiones.
+
+Piense en ello como una extensión a do_action()la que se le añade la capacidad de retrasar y repetir un gancho.
+
+---
+### Procesamiento en segundo plano probado en batalla
+Cada mes, Action Scheduler procesa millones de pagos de suscripciones , webhooks para WooCommerce , así como correos electrónicos y otros eventos para una variedad de otros complementos.
+
+Se ha visto en sitios activos que procesan colas de más de 50 000 trabajos y realizan operaciones que requieren un uso intensivo de recursos, como procesar pagos y crear pedidos, a un ritmo sostenido de más de 10 000 por hora sin afectar negativamente las operaciones normales del sitio.
+
+Todo esto ocurre en infraestructura y sitios de WordPress fuera del control del autor del complemento.
+
+Si su complemento necesita procesamiento en segundo plano, especialmente de grandes conjuntos de tareas, Action Scheduler puede ayudarlo.
+
+---
+### ¿Porque aveces se utiliza el archivo action-scheduler.php con su ruta en un plugin?
 el propósito de incluir el archivo "action-scheduler.php" desde un directorio específico dentro de un plugin de WordPress está relacionado con la integración de funcionalidades adicionales en un plugin mediante una biblioteca externa. Esto suele hacerse para extender las capacidades del plugin y garantizar una mayor funcionalidad y compatibilidad.
 
 En el contexto que proporcionaste, donde se incluye "action-scheduler.php" desde el directorio "/vendor/woocommerce/action-scheduler/", es probable que el plugin esté integrando la biblioteca "Action Scheduler" en su funcionalidad. Esta biblioteca se utiliza comúnmente en plugins de WooCommerce y otros complementos relacionados con el comercio electrónico en WordPress.
@@ -16,6 +43,7 @@ El propósito de esto puede incluir:
 
 En resumen, incluir "action-scheduler.php" desde un directorio específico en un plugin de WordPress es una estrategia que se utiliza para aprovechar funcionalidades existentes y mejorar la funcionalidad y compatibilidad del plugin. Esto es común en el desarrollo de plugins de WordPress, especialmente en casos en los que se necesita una funcionalidad más avanzada o específica que ya está disponible en bibliotecas externas de confianza.
 
+---
 ### Ejemplo sencillo
 + ejemplo sencillo de un plugin de WordPress que utiliza el Cron de WordPress para programar una tarea periódica que guarda un mensaje en un archivo de registro. Este es un ejemplo básico para ilustrar cómo funciona el Cron en WordPress.
 
